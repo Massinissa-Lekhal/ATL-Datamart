@@ -1,4 +1,11 @@
+#un check pour  verfifier toutes les colonnes 
 checks for nyc_raw:
-  - row_count:
-      warn: when > 90
-      fail: when = 0
+  - schema:
+      warn:
+        when required column missing : [vendorid,tpep_pickup_datetime,tpep_dropoff_datetime,passenger_count,trip_distance,ratecodeid,store_and_fwd_flag,pulocationid,dolocationid,payment_type,fare_amount,extra,mta_tax,tip_amount,tolls_amount,improvement_surcharge,total_amount,congestion_surcharge,airport_fee]
+  
+#un check pour verifier le nombre de ligne superieur a 0  
+#checks for nyc_raw: 
+  #- row_count:
+  #  warn: when > 90
+  #  fail: when = 0

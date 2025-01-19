@@ -107,11 +107,11 @@ def process_parquet_files(minio_client, bucket_name, table_name):
                 dataframe = clean_column_name(dataframe)
 
                 # Écrire dans PostgreSQL
-                # if not write_data_postgres(dataframe, table_name):
-                    # print(f"Échec de l'importation du fichier {file_name} dans PostgreSQL")
+                if not write_data_postgres(dataframe, table_name):
+                    print(f"Échec de l'importation du fichier {file_name} dans PostgreSQL")
 
-            # except Exception as e:
-                # print(f"Erreur lors du traitement du fichier {file_name} : {e}")
+            except Exception as e:
+                print(f"Erreur lors du traitement du fichier {file_name} : {e}")
             finally:
                 # Libérer la mémoire
                 del dataframe

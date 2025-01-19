@@ -26,7 +26,6 @@ def grab_data() -> None:
     raw_url = r'C:\Users\massi\Documents\ATL-Datamart\data\raw'
     download_url = "https://d37ci6vzurychx.cloudfront.net/trip-data/"
 
-        
     # Vérification et création du dossier raw si nécessaire
     try:
         os.listdir(raw_url)
@@ -37,7 +36,6 @@ def grab_data() -> None:
 
     # Spécifiez l'année
     year = (datetime.datetime.now().year)-1
-    print(year)
 
     # Boucle pour télécharger les fichiers des mois 1 et 2
     for month in range(1, 3):  # Changez la plage ici pour limiter à 2 mois

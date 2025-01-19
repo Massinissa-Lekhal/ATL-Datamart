@@ -1,0 +1,4 @@
+checks for nyc_raw:
+  - row_count:
+      warn: when > 90
+      fail: when = 0

@@ -16,3 +16,5 @@ setuptools
 pyarrow
 psycopg2
 psycopg2-binary
+soda-core-postgres
+soda-core-scientific

@@ -7,3 +7,13 @@ data_source nyc_warehouse:
     password: admin
   database: nyc_warehouse
   schema: public
+#configuration datamart pour le deuxieme exercice
+data_source nyc_datamart:
+  type: postgres
+  connection:
+    host: localhost
+    port: 15435
+    username: postgres
+    password: admin
+  database: nyc_datamart
+  schema: public

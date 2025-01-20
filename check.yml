@@ -9,3 +9,110 @@ checks for nyc_raw:
   #- row_count:
   #  warn: when > 90
   #  fail: when = 0
+
+#checks for facttrips:
+#  - schema:
+#      warn:
+#        when required column missing: [tripid, vendorid, tpep_pickup_datetime, tpep_dropoff_datetime, passenger_count, trip_distance, pulocationid, dolocationid, ratecodeid, payment_type, fare_amount, total_amount]
+#      fail:
+#        when forbidden column present: [forbidden_column1, forbidden_column2]
+        
+#  - row_count > 0
+
+#  - missing_count:
+#      fail:
+#        when missing: [tripid, vendorid, pulocationid, dolocationid, ratecodeid, payment_type]
+
+#  - uniqueness:
+#      fail:
+#        when duplicate: [tripid]
+
+#  - validity:
+#      fail:
+#        when:
+#          - tpep_dropoff_datetime < tpep_pickup_datetime
+#          - trip_distance < 0
+#          - fare_amount < 0
+#          - total_amount < 0
+
+#  - values_in:
+#      fail:
+#        when not in:
+#          vendorid: dim_vendor.vendor_id
+#          ratecodeid: dim_ratecode.ratecode_id
+#          payment_type: dim_payment_type.payment_type_id
+#          pulocationid: dim_location.location_id
+#          dolocationid: dim_location.location_id
+
+#checks for dim_location:
+#  - schema:
+#      warn:
+#        when required column missing: [location_id, borough, zone]
+#      fail:
+#        when forbidden column present: [forbidden_column1, forbidden_column2]
+
+#  - row_count > 0
+
+#  - missing_count:
+#      fail:
+#        when missing: [location_id, borough, zone]
+
+#  - uniqueness:
+#      fail:
+#        when duplicate: [location_id]
+
+#  - validity:
+#      fail:
+#        when not in:
+#          borough: [Manhattan, Brooklyn, Queens, Bronx, Staten Island]
+
+#checks for dim_payment_type:
+#  - schema:
+#      warn:
+#        when required column missing: [payment_type_id, payment_type_desc]
+#      fail:
+#        when forbidden column present: [forbidden_column1, forbidden_column2]
+
+#  - row_count > 0
+
+#  - missing_count:
+#      fail:
+#        when missing: [payment_type_id, payment_type_desc]
+
+#  - uniqueness:
+#      fail:
+#        when duplicate: [payment_type_id]
+
+#checks for dim_ratecode:
+#  - schema:
+#      warn:
+#        when required column missing: [ratecode_id, ratecode_description]
+#      fail:
+#        when forbidden column present: [forbidden_column1, forbidden_column2]
+
+#  - row_count > 0
+
+#  - missing_count:
+#      fail:
+#        when missing: [ratecode_id, ratecode_description]
+
+#  - uniqueness:
+#      fail:
+#        when duplicate: [ratecode_id]
+
+#checks for dim_vendor:
+#  - schema:
+#      warn:
+#        when required column missing: [vendor_id, vendor_name]
+#      fail:
+#        when forbidden column present: [forbidden_column1, forbidden_column2]
+
+#  - row_count > 0
+
+#  - missing_count:
+#      fail:
+#        when missing: [vendor_id, vendor_name]
+
+#  - uniqueness:
+#      fail:
+#        when duplicate: [vendor_id]

@@ -83,7 +83,7 @@ def upload_file(**kwargs):
 ###############################################
 with DAG(dag_id='Grab_NYC_Data_to_Minio',
         start_date=days_ago(1),
-        schedule_interval=None,
+        schedule_interval='0 0 1 * *',
         catchup=False,
         tags=['minio/read/write'],
         ) as dag:
